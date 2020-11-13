@@ -1,0 +1,13 @@
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\bin\Debug\netcoreapp3.1\OOP-snake.exe
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\bin\Debug\netcoreapp3.1\OOP-snake.deps.json
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\bin\Debug\netcoreapp3.1\OOP-snake.runtimeconfig.json
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\bin\Debug\netcoreapp3.1\OOP-snake.runtimeconfig.dev.json
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\bin\Debug\netcoreapp3.1\OOP-snake.dll
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\bin\Debug\netcoreapp3.1\OOP-snake.pdb
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\obj\Debug\netcoreapp3.1\OOP-snake.csprojAssemblyReference.cache
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\obj\Debug\netcoreapp3.1\OOP-snake.AssemblyInfoInputs.cache
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\obj\Debug\netcoreapp3.1\OOP-snake.AssemblyInfo.cs
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\obj\Debug\netcoreapp3.1\OOP-snake.csproj.CoreCompileInputs.cache
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\obj\Debug\netcoreapp3.1\OOP-snake.dll
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\obj\Debug\netcoreapp3.1\OOP-snake.pdb
+D:\02.HOMEWORKS\GEEKBRAINS\OOP-snake\OOP-snake\obj\Debug\netcoreapp3.1\OOP-snake.genruntimeconfig.cache

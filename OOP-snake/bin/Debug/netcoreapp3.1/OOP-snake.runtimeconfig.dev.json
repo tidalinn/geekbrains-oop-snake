@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Gradt\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Gradt\\.nuget\\packages"
+    ]
+  }
+}
