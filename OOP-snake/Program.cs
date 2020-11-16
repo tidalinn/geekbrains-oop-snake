@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace OOP_snake
 {
@@ -12,54 +13,47 @@ namespace OOP_snake
             Point p2 = new Point(4, 5, '#');
             p2.Draw();
 
-            int x = 1;
-            Func1(x);
-            Console.WriteLine($"\n\nFunc1 x={x}");
+            List<int> numList = new List<int>();
+            numList.Add(0);
+            numList.Add(1);
+            numList.Add(2);
 
-            Func2(x);
-            Console.WriteLine($"Func2 x={x}");
+            int x = numList[0];
+            int y = numList[1];
+            int z = numList[2];
 
-            Func3(x);
-            Console.WriteLine($"Func3 x={x}");
+            // чтобы в переменную i на каждом витке цикла были поочерёдно записаны значения всех элементов списка
+            foreach(int i in numList)
+            {
+                Console.WriteLine(i);
+            }
 
-            Move(p1, 10, 10);
-            Console.WriteLine($"Move(p1, 10, 10) p1.x = {p1.x}, p1.y = {p1.y}");
+            numList.RemoveAt(0);
 
-            Reset(p2);
-            Console.WriteLine($"Reset(p2) p2.x = {p2.x}, p2.y = {p2.y}, p2.sym = {p2.sym}");
+            List<Point> pList = new List<Point>();
+            pList.Add(p1);
+            pList.Add(p2);
 
-            p1 = p2;
-            p1.Draw();
-            p2.Draw();
+            // homework
+            Point p3 = new Point(7, 10, '%');
+            p3.Draw();
 
-            Console.ReadKey();
-        }
+            Point p4 = new Point(10, 6, '$');
+            p4.Draw();
 
-        private static void Func1(int x)
-        {
+            Point p5 = new Point(13, 8, '@');
+            p5.Draw();
 
-        }
+            Point p6 = new Point(15, 20, '&');
+            p6.Draw();
 
-        private static void Func2(int value)
-        {
-            value = value + 1;
-        }
+            List<Point> pListHomework = new List<Point>();
+            pListHomework.Add(p3);
+            pListHomework.Add(p4);
+            pListHomework.Add(p5);
+            pListHomework.Add(p6);
 
-        private static void Func3(int x)
-        {
-            x += 1;
-        }
-
-        private static void Move(Point p, int dx, int dy)
-        {
-            p.x = p.x + dx;
-            p.y = p.y + dy;
-        }
-
-        private static void Reset(Point p)
-        {
-            p = p;
-            //  Здесь переменная p2 останется без изменений
+            Console.ReadLine();
         }
     }
 }
