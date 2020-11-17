@@ -16,5 +16,19 @@ namespace OOP_snake
                 pList.Add(p);
             }
         }
+
+        // override the parent's method
+        public override void Draw()
+        {
+            base.Draw();
+            {
+                Console.ForegroundColor = ConsoleColor.Yellow;
+
+                // call the base Class realization of the method Draw
+                base.Draw();
+
+                Console.ForegroundColor = ConsoleColor.White;
+            }
+        }
     }
 }

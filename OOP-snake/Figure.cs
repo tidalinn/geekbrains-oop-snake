@@ -9,7 +9,8 @@ namespace OOP_snake
     {
         protected List<Point> pList;
 
-        public void Draw()
+        // virtual means the possibility of overriding this method by the Figure's descendant
+        public virtual void Draw()
         {
             foreach (Point p in pList)
             {

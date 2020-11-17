@@ -8,57 +8,36 @@ namespace OOP_snake
 	{
         static void Main(string[] args)
         {
-            int width = 80;
-            int height = 25;
-            int lineWidth = width - 2;
-            int lineHeight = height - 2;
+            // descendant of the Class Figure
+            VerticalLine vl = new VerticalLine(0, 10, 5, '%');
+            Draw(vl);
 
-            Console.SetWindowSize(width, height);
-            // set the window's size
-            Console.SetBufferSize(width, height);
-
-            // draw the framework
-            HorizontalLine topLine = new HorizontalLine(0, lineWidth, 0, '+');
-            HorizontalLine bottomLine = new HorizontalLine(0, lineWidth, lineHeight, '+');
-            VerticalLine leftLine = new VerticalLine(0, lineHeight, 0, '+');
-            VerticalLine rightLine = new VerticalLine(0, lineHeight, lineWidth, '+');
-
-            topLine.Draw();
-            bottomLine.Draw();
-            leftLine.Draw();
-            rightLine.Draw();
-
-            // draw the dots
             Point p = new Point(4, 5, '*');
+            // indicate fSnake as the descendant of the Figure Class
+            Figure fSnake = new Snake(p, 4, Direction.RIGHT);
+            Draw(fSnake);
+            // hovewer! now you can't use the methods of the Snake Class since it's just a Figure
+            // so it should be aligned to the Snake Class
+            Snake snake = (Snake)fSnake;
 
-            Snake snake = new Snake(p, 4, Direction.RIGHT);
-            snake.Draw();
+            // descendant of the Class Figure
+            HorizontalLine hl = new HorizontalLine(0, 5, 6, '&');
 
-            // create food
-            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
-            Point food = foodCreator.CreateFood();
-            food.Draw();
+            // list of Figures
+            List<Figure> figures = new List<Figure>();
+            figures.Add(fSnake);
+            figures.Add(vl);
+            figures.Add(hl);
 
-            while(true)
+            foreach (var f in figures)
             {
-                if (Console.KeyAvailable)
-                {
-                    ConsoleKeyInfo key = Console.ReadKey();
-                    snake.HandleKey(key.Key);
-                }
-                Thread.Sleep(100);
-                snake.Move();
-
-                if (snake.Eat(food))
-                {
-                    food = foodCreator.CreateFood();
-                    food.Draw();
-                }
-                else
-                {
-                    snake.Move();
-                }
+                f.Draw();
             }
+        }
+
+        static void Draw(Figure figure) // takes the descendants of Figure Class only
+        {
+            figure.Draw();
         }
     }
 }
