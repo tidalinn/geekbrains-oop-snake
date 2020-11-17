@@ -4,40 +4,53 @@ using System.Threading;
 
 namespace OOP_snake
 {
-	class Program
-	{
+    class Program
+    {
         static void Main(string[] args)
         {
-            // descendant of the Class Figure
-            VerticalLine vl = new VerticalLine(0, 10, 5, '%');
-            Draw(vl);
+            Console.SetBufferSize(160, 50);
 
+            Walls walls = new Walls(80, 25);
+            walls.Draw();
+
+            // draw the dots
             Point p = new Point(4, 5, '*');
-            // indicate fSnake as the descendant of the Figure Class
-            Figure fSnake = new Snake(p, 4, Direction.RIGHT);
-            Draw(fSnake);
-            // hovewer! now you can't use the methods of the Snake Class since it's just a Figure
-            // so it should be aligned to the Snake Class
-            Snake snake = (Snake)fSnake;
 
-            // descendant of the Class Figure
-            HorizontalLine hl = new HorizontalLine(0, 5, 6, '&');
+            Snake snake = new Snake(p, 4, Direction.RIGHT);
+            snake.Draw();
 
-            // list of Figures
-            List<Figure> figures = new List<Figure>();
-            figures.Add(fSnake);
-            figures.Add(vl);
-            figures.Add(hl);
+            // create food
+            FoodCreator foodCreator = new FoodCreator(80, 25, '$');
+            Point food = foodCreator.CreateFood();
+            food.Draw();
 
-            foreach (var f in figures)
+            while (true)
             {
-                f.Draw();
-            }
-        }
 
-        static void Draw(Figure figure) // takes the descendants of Figure Class only
-        {
-            figure.Draw();
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    Console.WriteLine("Game over!");
+                    break;
+                }
+
+                if (snake.Eat(food))
+                {
+                    food = foodCreator.CreateFood();
+                    food.Draw();
+                }
+                else
+                {
+                    snake.Move();
+                }
+
+                Thread.Sleep(100);
+
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key.Key);
+                }
+            }
         }
     }
 }

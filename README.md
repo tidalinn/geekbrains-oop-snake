@@ -1,1 +1,1 @@
-# lesson-13 / Polymorphism
+# lesson-14 / Game 'Snake'

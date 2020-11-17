@@ -46,7 +46,7 @@ namespace OOP_snake
 
         public bool IsHit(Point p)
         {
-            return p.x == this.x && p.y == this.y;
+            return p.x == this.x && p.y == this.y; // are the coords equal?
         }
 
         public void Draw()
