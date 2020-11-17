@@ -8,14 +8,20 @@ namespace OOP_snake
 	{
         static void Main(string[] args)
         {
+            int width = 80;
+            int height = 25;
+            int lineWidth = width - 2;
+            int lineHeight = height - 2;
+
+            Console.SetWindowSize(width, height);
             // set the window's size
-            Console.SetBufferSize(120, 30);
+            Console.SetBufferSize(width, height);
 
             // draw the framework
-            HorizontalLine topLine = new HorizontalLine(0, 78, 0, '+');
-            HorizontalLine bottomLine = new HorizontalLine(0, 78, 24, '+');
-            VerticalLine leftLine = new VerticalLine(0, 24, 0, '+');
-            VerticalLine rightLine = new VerticalLine(0, 24, 78, '+');
+            HorizontalLine topLine = new HorizontalLine(0, lineWidth, 0, '+');
+            HorizontalLine bottomLine = new HorizontalLine(0, lineWidth, lineHeight, '+');
+            VerticalLine leftLine = new VerticalLine(0, lineHeight, 0, '+');
+            VerticalLine rightLine = new VerticalLine(0, lineHeight, lineWidth, '+');
 
             topLine.Draw();
             bottomLine.Draw();
@@ -28,6 +34,7 @@ namespace OOP_snake
             Snake snake = new Snake(p, 4, Direction.RIGHT);
             snake.Draw();
 
+            // create food
             FoodCreator foodCreator = new FoodCreator(80, 25, '$');
             Point food = foodCreator.CreateFood();
             food.Draw();
